@@ -55,9 +55,21 @@ export class Game extends React.Component {
                 desc = 'Game start';
             };
 
+            let inputStyle = {}
+            if (move == this.state.stepNumber) {
+                inputStyle = {
+                    fontWeight:'bold'
+                };
+            }
+
             return (
                 <li key={move}>
-                <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                <button
+                    onClick={() => this.jumpTo(move)}
+                    style={inputStyle}
+                >
+                    {desc}
+                </button>
                 </li>
             );
         });
